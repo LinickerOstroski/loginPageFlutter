@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "565516938743",
+    "project_id": "horas-v3-dc469",
+    "storage_bucket": "horas-v3-dc469.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565516938743:android:49d93c6db8b2fc7aaad2f2",
+        "android_client_info": {
+          "package_name": "com.horas.flutter_application_3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeamZXVkg_CAmck7fHQ4Z4a2nWV20XV5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

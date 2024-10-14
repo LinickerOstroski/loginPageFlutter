@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/screens/register_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  RegisterScreen({super.key});
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _senhaController = TextEditingController();
+  final TextEditingController _confirmaSenhaController =
+      TextEditingController();
+  final TextEditingController _nomeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         color: Colors.blue,
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(16),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -20,12 +22,16 @@ class LoginScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16)),
                 child: Column(
                   children: [
                     const FlutterLogo(size: 76),
+                    const SizedBox(height: 16),
+                    TextField(
+                      controller: _nomeController,
+                      decoration: const InputDecoration(hintText: 'Nome'),
+                    ),
                     const SizedBox(height: 16),
                     TextField(
                       controller: _emailController,
@@ -38,26 +44,20 @@ class LoginScreen extends StatelessWidget {
                       decoration: const InputDecoration(hintText: 'Senha'),
                     ),
                     const SizedBox(height: 16),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('Entrar'),
+                    TextField(
+                      obscureText: true,
+                      controller: _confirmaSenhaController,
+                      decoration:
+                          const InputDecoration(hintText: 'Confirme sua Senha'),
                     ),
                     const SizedBox(height: 16),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('Entrar com google'),
-                    ),
-                    const SizedBox(height: 16),
-                    TextButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => RegisterScreen(),
-                              ));
+                          if (_senhaController.text ==
+                              _confirmaSenhaController.text) {}
                         },
-                        child: const Text(
-                            'Ainda não tem uma conta, crie uma conta'))
+                        child: const Text('Cadastrar')),
+                    const SizedBox(height: 16)
                   ],
                 ),
               )
